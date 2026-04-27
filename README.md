@@ -5,11 +5,11 @@ This repository contains all simulation and analysis code related to the antibod
 	antibody-dynamics/
 	|-- analysis-files/
 	| |-- clustering/
-	| | |-- bootstrap-scripts/       			     # Bootstrapping MSMs for error bars
+	| | |-- bootstrap-scripts/                                   # Bootstrapping MSMs for error bars
 	| | | |-- bootstrap_MSMs_withReplacement_lagtime100_n1000.py # Code for bootstrapping MSMs
-	| | | |-- run-submit-bootstrap-CPU.sh 			     # Bash script to recursively submit slurm submission 
+	| | | |-- run-submit-bootstrap-CPU.sh                        # Bash script to recursively submit slurm submission 
 	| | | |-- submit-bootstrap-lagtime100-n1000-CPU.sh           # Slurm submission for bootstraps 
-	| | |-- scripts/ 		 # Code for clustering + building MSMs
+	| | |-- scripts/                 # Code for clustering + building MSMs
 	| | | |-- cluster-data.sh        # Code for clustering simulation frames
 	| | | |-- make-msms.slurm        # Slurm submission for the ITS + MSM scripts 
  	| | | |-- make_imp_tscale.py     # Code for implied time scales (ITS)
@@ -29,5 +29,5 @@ This repository contains all simulation and analysis code related to the antibod
 	| | |-- pr-50ns.mdp 
 	| | |-- slurm_submission         #  Slurm submission file to submit equilibration
 	|-- LICENSE
-        |-- README.md
+	|-- README.md
 
