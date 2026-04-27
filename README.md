@@ -4,13 +4,13 @@ This repository contains all simulation and analysis code related to the antibod
 ## Directory Structure
 	antibody-dynamics/
 	|-- analysis-files/
-        | |-- clustering/
-        | | |-- scripts
-        | | | |-- cluster-data.sh        # Code for clustering simulation frames
-        | | | |-- make-msms.slurm        # Slurm submission for the ITS + MSM scripts 
-        | | | |-- make_imp_tscale.py     # Code for implied time scales (ITS)
-        | | | |-- make_msm.py            # Code for building Markov state model (MSM)
-        | | | |-- submit-cluster-data-CPU-CH103-lineage.sh # Slurm submission for cluster + MSM steps. 
+	| |-- clustering/
+	| | |-- scripts
+	| | | |-- cluster-data.sh        # Code for clustering simulation frames
+	| | | |-- make-msms.slurm        # Slurm submission for the ITS + MSM scripts 
+ 	| | | |-- make_imp_tscale.py     # Code for implied time scales (ITS)
+ 	| | | |-- make_msm.py            # Code for building Markov state model (MSM)
+	| | | |-- submit-cluster-data-CPU-CH103-lineage.sh # Slurm submission for cluster + MSM steps. 
 	|-- md-files/                    # Code for running simulations (equilibration + FAST)
 	| |-- simulation-FAST-code/      # FAST
 	| | |-- run-fast-alt.py          # Code for running FAST
