@@ -2,6 +2,7 @@
 This repository contains all simulation and analysis code related to the antibody dynamics manuscript.
 
 ## Directory Structure
+cat << 'EOF' > DIRECTORY_STRUCTURE.txt
 antibody-dynamics/
 │── md-files/ # Code for running simulations (equilibration + FAST)
 │ │── simulation-FAST-code/ # FAST
@@ -17,3 +18,4 @@ antibody-dynamics/
 │ │ │── pr-50ns.mdp 
 │ │ │── slurm_submission 
 │── README.md
+EOF
