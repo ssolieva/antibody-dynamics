@@ -1,0 +1,35 @@
+; minim.mdp - used as input into grompp to generate em.tpr
+; Parameters describing what to do, when to stop and what to save
+integrator  = steep         ; Algorithm (steep = steepest descent minimization)
+emtol       = 1000.0        ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep      = 0.01          ; Minimization step size
+nsteps      = 50000         ; Maximum number of (minimization) steps to perform
+nstxtcout   = 1             ; writeout freq
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+nstlist         = 1         ; Frequency to update the neighbor list and long range forces.
+cutoff-scheme   = Verlet    ; Buffered neighbor searching
+ns_type         = grid      ; Method to determine neighbor list (simple, grid)
+coulombtype     = PME       ; Treatment of long range electrostatic interactions
+rcoulomb        = 1.0       ; Short-range electrostatic cut-off
+rvdw            = 1.0       ; Short-range Van der Waals cut-off
+pbc             = xyz       ; Periodic Boundary Conditions in all 3 dimensions
+
+; More info on parameters:
+; source: Gromacs manual 
+;	Verlet cutoff scheme: 
+;		- buffered neighbor searching. This is a method for efficiently calculating non-bonded interactions. 
+;		- Uses a buffered neighbor list and shifts the potential to zero at the cutoff distance, 
+; 		  ensuring smooth potential and force calculation.
+;		- Default scheme, allows for parallelization and is better for GPUs
+;		- Maintains a list of neighboring atoms with a certain cutoff distance + a buffer. 
+;		  The buffer allows for some drift in position due to time integration. No need to rebuild neighbor list frequently.
+;		- Lennard-Jones and Coulomb potentials are shifted to 0 at cutoff distances. 
+;
+;	Coulombtype PME
+;		- Particle mesh ewald. PME is highly accurate for long-range electrostatics. 
+;		- Splits electrostatics into short-range and long-range. 
+;		- Short range = uses a cutoff (here it's set to 1 nm)	
+; 		- Long range = uses grid + fast fourier transform
+; 		- (1/r) = (short range) + (long range)
+

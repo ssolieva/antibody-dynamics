@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#SBATCH --time=2:00:00
+#SBATCH --job-name=equil
+#SBATCH --partition=p100
+#SBATCH --gpus=1
+
+module load gromacs/gcc/9.3.0/gromacs_2023.2_p100
+source /opt/user/gromacs/gcc/9.3.0/gromacs_2023.2_p100/bin/GMXRC
+echo $GMXLIB
+
+make

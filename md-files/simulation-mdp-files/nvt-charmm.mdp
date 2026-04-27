@@ -1,0 +1,64 @@
+title                   = CHARMM  NVT equilibration file
+define                  = -DPOSRES  ; position restrain the protein
+
+; Run parameters
+integrator              = md        ; leap-frog integrator
+nsteps                  = 100000    ; 2 fs * 100000 = 200000 fs = 200 ps
+dt                      = 0.002     ; 2 fs
+
+; Output control
+nstxout                 = 500       ; save coordinates every 1.0 ps
+nstvout                 = 500       ; save velocities every 1.0 ps
+nstenergy               = 500       ; save energies every 1.0 ps
+nstlog                  = 500       ; update log file every 1.0 ps
+nstcalcenergy           = 1         ; compute energies at every step.
+
+; Bond parameters (lincs = linear constraint solver) 
+constraint_algorithm    = lincs     ; holonomic constraints (constraints depend on position and time) 
+constraints             = h-bonds   ; bonds involving H are constrained
+lincs_iter              = 1         ; accuracy of LINCS
+lincs_order             = 4         ; also related to accuracy. 
+
+
+; Electrostatics
+coulombtype             = PME       ; Particle Mesh Ewald for long-range electrostatics
+pme_order               = 4         ; cubic interpolation
+fourierspacing          = 0.12      ; grid spacing for FFT (default)
+
+
+; Nonbonded settings 
+cutoff-scheme           = Verlet    ; Buffered neighbor searching
+ns_type                 = grid      ; search neighboring grid cells
+nstlist                 = 40        ; 40 for GPU simulations. Update neighbors every 80 fs
+rlist                   = 1.2       ; neighbor list cutoff distance (nm)
+rcoulomb                = 1.2       ; short-range electrostatics cutoff (nm)
+vdwtype                 = Cut-off   ; CHARMM.
+vdw-modifier            = Force-switch ; CHARMM. force based switching 
+rvdw_switch             = 1.0       ; CHARMM.
+rvdw                    = 1.2       ; CHARMM. short-range VDW cutoff (nm)
+DispCorr                = no        ; No long range dispersion correction, already handled by force switching 
+
+; Temperature coupling is on
+tcoupl                  = v-rescale             ; Velocities get adjusted to maintain Temp. Stochasticly modified Berendsen thermostat
+tc-grps                 = Protein Non-Protein   ; two coupling groups - more accurate 
+tau_t                   = 0.1     0.1           ; time constant, in ps. Fast temp control. 
+ref_t                   = 310     310           ; reference temp for each group (K). 310 K -273.15 K = 36.9C = physiological temp. 
+
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = SYSTEM
+;
+
+; Pressure coupling is off
+pcoupl                  = no        ; no pressure coupling in NVT! Will use in NPT step. 
+refcoord_scaling        = com       ;
+
+; Periodic boundary conditions
+pbc                     = xyz       ; 3D PBC
+
+; Velocity generation
+gen_vel                 = yes       ; assign velocities from Maxwell distribution
+gen_temp                = 310       ; temperature for Maxwell distribution
+gen_seed                = -1        ; generate a random seed 
+continuation            = no        ; Restarting? e.g., after NVT?
+
