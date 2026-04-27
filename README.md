@@ -2,9 +2,10 @@
 This repository contains all simulation and analysis code related to the antibody dynamics manuscript.
 
 ## Directory Structure
-antibody-dynamics/
-|-- md-files/ # Code for running simulations (equilibration + FAST)
-| |-- simulation-FAST-code/ # FAST
+	antibody-dynamics/
+	|-- md-files/ # Code for running simulations (equilibration + FAST)
+	| |-- simulation-FAST-code/ # FAST
+
 | | |-- run-fast-alt.py # Code for running FAST
 | | |-- save_inds.py # Code for generating the atom_indices.dat file needed for FAST
 | | |-- slurm_submission # Slurm submission file to submit FAST job
