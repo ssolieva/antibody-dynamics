@@ -14,7 +14,12 @@ This repository contains all simulation and analysis code related to the antibod
 	| | | |-- make-msms.slurm        # Slurm submission for the ITS + MSM scripts 
  	| | | |-- make_imp_tscale.py     # Code for implied time scales (ITS)
  	| | | |-- make_msm.py            # Code for building Markov state model (MSM)
-	| | | |-- submit-cluster-data-CPU-CH103-lineage.sh # Slurm submission for cluster + MSM steps. 
+	| | | |-- submit-cluster-data-CPU-CH103-lineage.sh # Slurm submission for cluster + MSM steps.
+        | | -- RMSF/
+        | | | -- scripts/
+        | | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure.py         # Code for RMSF calculations 
+        | | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure_toolbox.py # Functions for RMSF calculations
+        | | | | -- submit-rmsd-CPU-CH103-lineage.sh                                     # Slurm submission for RMSF code
 	|-- md-files/                    # Code for running simulations (equilibration + FAST)
 	| |-- simulation-FAST-code/      # FAST
 	| | |-- run-fast-alt.py          # Code for running FAST
