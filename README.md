@@ -15,6 +15,14 @@ This repository contains all simulation and analysis code related to the antibod
  	| | | |-- make_imp_tscale.py     # Code for implied time scales (ITS)
  	| | | |-- make_msm.py            # Code for building Markov state model (MSM)
 	| | | |-- submit-cluster-data-CPU-CH103-lineage.sh # Slurm submission for cluster + MSM steps.
+	| | -- distance-to-antigen/
+	| | | -- data/
+	| | | | -- to_glycan/            # CSV files with distance values
+	| | | | -- to_protein/           # CSV files with distance values
+	| | | -- notebooks/
+	| | | | -- RMSFperResi_alignSeq_DistPlots.ipynb # notebook for aligning by sequence and making plots
+	| | | | -- calcGlycanDist.ipynb  # notebook for antibody-glycan distance calculations
+	| | | | -- calcProteinDist.ipynb # notebook for antibody-protein distance calculations
 	| | -- RMSF/
 	| | | -- scripts/
 	| | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure.py         # Code for RMSF calculations 
