@@ -33,6 +33,8 @@ This repository contains all simulation and analysis code related to the antibod
 	| | |-- nvt-charmm.mdp
 	| | |-- pr-50ns.mdp 
 	| | |-- slurm_submission         #  Slurm submission file to submit equilibration
+	| | -- simulation-starting-structures
+	| | | -- README.md # link to OSF 
 	|-- LICENSE
 	|-- README.md
 
