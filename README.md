@@ -4,6 +4,9 @@ This repository contains all simulation and analysis code related to the antibod
 ## Directory Structure
 	antibody-dynamics/
 	|-- analysis-files/
+	| |-- aggregate-simulation-time/
+	| | |-- notebooks/
+	| | | |-- FAH-trajLength-distributions.ipynb # Folding@home simulation trajectory length distribitions 
 	| |-- clustering/
 	| | |-- bootstrap-scripts/                                   # Bootstrapping MSMs for error bars
 	| | | |-- bootstrap_MSMs_withReplacement_lagtime100_n1000.py # Code for bootstrapping MSMs
