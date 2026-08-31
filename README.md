@@ -26,11 +26,23 @@ This repository contains all simulation and analysis code related to the antibod
 	| | | | -- RMSFperResi_alignSeq_DistPlots.ipynb # notebook for aligning by sequence and making plots
 	| | | | -- calcGlycanDist.ipynb  # notebook for antibody-glycan distance calculations
 	| | | | -- calcProteinDist.ipynb # notebook for antibody-protein distance calculations
+	| | -- paratope_RMSD/
+	| | | -- data/
+	| | | | -- # numpy file for all framework region indices.
+	| | | -- notebooks
+	| | | | -- calculateRMSD.ipynb # final RMSD calculation + figures
+	| | | | -- FR_indices_toolbox.py # functions used in notebooks here.
+	| | | | -- get_indices*ipynb # notebooks to get alignemnt indices / residue numbers.
 	| | -- RMSF/
 	| | | -- scripts/
 	| | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure.py         # Code for RMSF calculations 
 	| | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure_toolbox.py # Functions for RMSF calculations
 	| | | | -- submit-rmsd-CPU-CH103-lineage.sh                                     # Slurm submission for RMSF code
+	| | -- starting_RMSD/ # calculating RMSD of the cluster centers to the starting structure. 
+	| | | -- notebooks/
+	| | | | -- calculateRMSD_FAH.ipynb # Folding@home RMSD calculation +  figures
+	| | | | -- calculateRMSD.ipynb # FAST RMSD calculation + figures
+	| | | | -- calculateRMSD_V_only.ipynb # FAST V-only calculation + figures
 	|-- md-files/                    # Code for running simulations (equilibration + FAST)
 	| |-- simulation-FAST-code/      # FAST
 	| | |-- run-fast-alt.py          # Code for running FAST
