@@ -6,7 +6,7 @@ This repository contains all simulation and analysis code related to the antibod
 	|-- analysis-files/
 	| |-- aggregate-simulation-time/
 	| | |-- notebooks/
-	| | | |-- FAH-trajLength-distributions.ipynb # Folding@home simulation trajectory length distribitions 
+	| | | |-- FAH-trajLength-distributions.ipynb # Figure S2, Folding@home simulation trajectory length distribitions 
 	| | |-- figures/ # Histograms from Figure S2.	
 	| |-- clustering/
 	| | |-- bootstrap-scripts/                                   # Bootstrapping MSMs for error bars
@@ -36,9 +36,15 @@ This repository contains all simulation and analysis code related to the antibod
 	| | | | -- get_indices*ipynb # notebooks to get alignemnt indices / residue numbers.
 	| | -- RMSF/
 	| | | -- scripts/
-	| | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure.py         # Code for RMSF calculations 
-	| | | | -- Ab_CA_RMSD_per_resi_VHC_VLC_to_start_or_average_structure_toolbox.py # Functions for RMSF calculations
-	| | | | -- submit-rmsd-CPU-CH103-lineage.sh                                     # Slurm submission for RMSF code
+	| | | | -- Ab_CA_RMSF_VHC_VLC.py         # Code for RMSF calculations 
+	| | | | -- Ab_CA_RMSF_VHC_VLC_toolbox.py # Functions for RMSF calculations
+	| | | | -- submit-rmsf.sh                           # Slurm submission for RMSF code
+	| | | | -- # other scripts are described in the readme.md in this directory.
+	| | | | -- parse_by_sequence/ # all code for parsing through rmsf data for Regions + CDR loops
+	| | | -- notebooks/
+	| | | | -- RMSF_Fab_vs_Fv.ipynb # Notebook to make Figure 2A 
+	| | | | -- RMSF_bothChain_onlyHC_onlyLC.ipynb # Notebook to make Figures 1A, 1C, 2B, S4.
+	| | | | -- RMSF_and_distance_plots.ipynb # Notebook to make Figures S7, S8-S14, 3A, 4A, 5A
 	| | -- starting_RMSD/ # calculating RMSD of the cluster centers to the starting structure. 
 	| | | -- notebooks/
 	| | | | -- calculateRMSD_FAH.ipynb # Folding@home RMSD calculation +  figures
