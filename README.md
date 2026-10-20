@@ -31,7 +31,7 @@ This repository contains all simulation and analysis code related to the antibod
 	| | | -- data/
 	| | | | -- # numpy file for all framework region indices.
 	| | | -- notebooks
-	| | | | -- calculateRMSD.ipynb # final RMSD calculation + figures
+	| | | | -- calculateRMSD.ipynb # final RMSD calculation Figure S5
 	| | | | -- FR_indices_toolbox.py # functions used in notebooks here.
 	| | | | -- get_indices*ipynb # notebooks to get alignemnt indices / residue numbers.
 	| | -- RMSF/
@@ -40,16 +40,16 @@ This repository contains all simulation and analysis code related to the antibod
 	| | | | -- Ab_CA_RMSF_VHC_VLC_toolbox.py # Functions for RMSF calculations
 	| | | | -- submit-rmsf.sh                           # Slurm submission for RMSF code
 	| | | | -- # other scripts are described in the readme.md in this directory.
-	| | | | -- parse_by_sequence/ # all code for parsing through rmsf data for Regions + CDR loops
+	| | | | -- parse_by_sequence/ # all code for parsing through rmsf data for Regions + CDR loops (Figures S6, S8-S14)
 	| | | -- notebooks/
 	| | | | -- RMSF_Fab_vs_Fv.ipynb # Notebook to make Figure 2A 
 	| | | | -- RMSF_bothChain_onlyHC_onlyLC.ipynb # Notebook to make Figures 1A, 1C, 2B, S4.
 	| | | | -- RMSF_and_distance_plots.ipynb # Notebook to make Figures S7, S8-S14, 3A, 4A, 5A
 	| | -- starting_RMSD/ # calculating RMSD of the cluster centers to the starting structure. 
 	| | | -- notebooks/
-	| | | | -- calculateRMSD_FAH.ipynb # Folding@home RMSD calculation +  figures
-	| | | | -- calculateRMSD.ipynb # FAST RMSD calculation + figures
-	| | | | -- calculateRMSD_V_only.ipynb # FAST V-only calculation + figures
+	| | | | -- calculateRMSD_FAH.ipynb # Folding@home RMSD calculation Figure S3
+	| | | | -- calculateRMSD.ipynb # FAST RMSD calculation Figure S3
+	| | | | -- calculateRMSD_V_only.ipynb # FAST V-only calculation Figure S3
 	|-- md-files/                    # Code for running simulations (equilibration + FAST)
 	| |-- simulation-FAST-code/      # FAST
 	| | |-- run-fast-alt.py          # Code for running FAST
